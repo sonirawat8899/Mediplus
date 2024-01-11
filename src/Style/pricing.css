@@ -1,0 +1,15 @@
+
+
+.pricing-table{
+	background:#f9f9f9;
+	position:relative;
+}
+.pricing-table .single-table {
+	background: #fff;
+	border:1px solid #ddd;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	margin: 15px 0;
+	padding:45px 35px 30px 35px;
+}

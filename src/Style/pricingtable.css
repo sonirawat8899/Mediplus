@@ -1,0 +1,106 @@
+/* Table Head */
+.pricing-table .single-table .table-head {
+  text-align: center;
+}
+.pricing-table .single-table .icon i {
+  font-size: 65px;
+  color: #1a76d1;
+}
+.pricing-table .single-table .title {
+  font-size: 21px;
+  color: #2c2d3f;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+.pricing-table .single-table .amount {
+  font-size: 36px;
+  font-weight: 600;
+  color: #1a76d1;
+}
+.pricing-table .single-table .amount span {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #868686;
+  margin-left: 8px;
+}
+/* Table List */
+.pricing-table .single-table .table-list {
+  padding: 10px 0;
+  text-align: left;
+  margin-top: 30px;
+}
+.pricing-table .table-list li {
+  position: relative;
+  color: #666;
+  text-transform: capitalize;
+  margin-bottom: 18px;
+  padding-right: 32px;
+}
+.pricing-table .table-list li:last-child {
+  margin-bottom: 0px;
+}
+.pricing-table .table-list li.cross i {
+  background: #aaaaaa;
+}
+.pricing-table .table-list i {
+  font-size: 7px;
+  text-align: center;
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: #fff;
+  background: #1a76d1;
+  border-radius: 100%;
+  padding-left: 1px;
+}
+
+/* Table Bottom */
+.pricing-table .table-bottom {
+  margin-top: 25px;
+}
+.pricing-table .btn {
+  padding: 12px 25px;
+  width: 100%;
+  color: #fff;
+}
+.pricing-table .btn:before {
+  background: #2c2d3f;
+}
+.pricing-table .btn:hover {
+  color: #fff;
+}
+.pricing-table .btn i {
+  font-size: 16px;
+  margin-right: 10px;
+}
+.pricing-table .btnp {
+  padding: 12px 25px;
+  width: 100%;
+  color: #fff;
+}
+
+.btnp {
+  
+  font-size: 14px;
+  text-transform: capitalize;
+  font-weight: 500;
+  background: #1A76D1;
+  position: relative;
+  box-shadow: none;
+  display: inline-block;
+
+  transition: all 0.4s ease;
+
+  transform: perspective(1px) translateZ(0);
+  border: none;
+ 
+  border-radius: 4px;
+}
+/*=============================
+	End Pricing Table CSS
+===============================*/

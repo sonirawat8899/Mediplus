@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  /* 1rem = 10px by default, you can adjust as per your requirement */
+  font-size: 62.5%; /* Sets 1rem = 10px */
+}
+
+/* Set the viewport to match the device's width */
+@media screen and (max-width: 767px) {
+  /* For smaller devices, adjust the viewport */
+  html {
+    font-size: 50%; /* Adjust the base font size for smaller screens */
+  }
+}

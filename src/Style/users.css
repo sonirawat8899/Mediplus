@@ -1,0 +1,185 @@
+.updt {
+  padding: 20px 60px;
+  background-color:#1a76d1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-top: 25px;
+  cursor: pointer;
+
+  margin-bottom: 50px;
+}
+
+.updt:hover {
+  background-color: #2c2d3f;
+  
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for table header */
+  thead {
+    background-color: #f2f2f2;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ccc; /* Add column lines */
+  }
+  
+  /* Alternate row color */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Hover effect */
+  tbody tr:hover {
+    background-color: #e5e5e5;
+  }
+  
+  /* Style for the 'No users found' message */
+  td[colspan="9"] {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+  }
+  
+  /* Style for the images in the table */
+  /* img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  } */
+  
+  
+ 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  max-width: 80%;
+  overflow: auto;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #555;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.popup h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.popup ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popup ul li {
+  margin-bottom: 10px;
+}
+
+.popup ul li strong {
+  font-weight: bold;
+}
+
+.popup img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+
+
+/* Existing styles remain unchanged */
+
+.popup-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup-body {
+  padding: 0 20px;
+}
+
+.user-details {
+  font-size: 16px;
+  line-height: 1.6;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-details:last-child {
+  border-bottom: none;
+}
+
+.user-details strong {
+  margin-right: 5px;
+  font-weight: bold;
+}
+.primary-button {
+  background-color: #1A76D1;
+  color: white;
+  /* Add any other styles */
+}
+
+.danger-button {
+  background-color: rgb(218, 37, 37);
+  color: white;
+  /* Add any other styles */
+}
+
+.success-button {
+  background-color: rgb(20, 76, 20);
+  color: white;
+  /* Add any other styles */
+}
+/* Style for buttons container */
+.button-container {
+  display: flex;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+/* Style for individual buttons */
+.primary-button,
+.danger-button,
+.success-button {
+  /* Define button styles */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  /* Add your specific button styles here */
+}
+  

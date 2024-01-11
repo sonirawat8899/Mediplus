@@ -1,0 +1,88 @@
+
+/*===============================
+	Start Call to action CSS
+=================================*/
+.call-action{
+	/* background-image:url('/assets/img/call-bg.jpg'); */
+	background-size:cover;
+	background-position:center;
+	position:relative;
+	background-repeat:no-repeat;
+}
+.call-action .content{
+	text-align:center;
+	padding:100px 265px;
+}
+.call-action .content h2{
+	color:#fff;
+	font-size:32px;
+	font-weight:600;
+	line-height:46px;
+}
+.call-action .content p {
+	color: #fff;
+	margin: 30px 0px;
+	font-size: 15px;
+}
+.call-action .content .btn{
+	background:#fff;
+	margin-right:20px;
+	font-weight:500;
+	border:1px solid #fff;
+	color:#1a76d1;
+}
+.call-action .content .btn:before{
+	background:#1A76D1;
+}
+.call-action .content .btn:hover{
+	background:#1A76D1;
+	color:#fff;
+}
+.call-action .content .btn:last-child{
+	margin-right:0px;
+}
+.call-action .content .second {
+	border: 1px solid #fff;
+	color: #fff;
+	background: transparent;
+	color: #fff !important;
+}
+.call-action .content .second:before{
+	background:#fff;
+}
+.call-action .content .second:hover{
+	color:#1A76D1;
+	border-color:transparent;
+	background:#fff;
+}
+.call-action .content .second i{
+	margin-left:10px;
+}
+
+.btnac{
+	height: 60px;
+     top: -100px;
+  width: 200px;
+  background-color: white;
+  color: #1A76D1;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 25px;
+  
+}
+
+.actionbtn{
+	height: 60px;
+     top: -100px;
+  width: 135px;
+  background-color:transparent;
+  color: white;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+/*===============================
+	Start Call to action CSS
+=================================*/
+

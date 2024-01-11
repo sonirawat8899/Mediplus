@@ -1,0 +1,172 @@
+.carousel-caption {
+  position: absolute;
+  top: 50px; /* Adjust the distance from the top */
+  left: 50px; /* Adjust the distance from the left */
+  right: 50px; /* Adjust the distance from the right */
+  text-align: left; /* or right or center depending on your preference */
+  color: white; /* Caption text color */
+}
+
+.slider .single-slider {
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.slider .single-slider .text {
+  margin-top: 120px;
+}
+.slider.index2 .single-slider .text {
+  margin-top: 150px;
+}
+.slider .single-slider h1 {
+  color: #2c2d3f;
+  font-size: 38px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  line-height: 42px;
+}
+.slider .single-slider h1 span {
+  color: #1a76d1;
+  
+
+}
+.slider .single-slider p {
+  color: #2c2d3f;
+  margin-top: 27px;
+  font-weight: 400;
+}
+.slider .single-slider .button {
+  margin-top: 30px;
+}
+.slider .single-slider .btn {
+  color: #fff;
+  background: #1a76d1;
+  font-weight: 500;
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px;
+}
+.slider .single-slider .btn:last-child {
+  margin: 0;
+}
+.slider .single-slider .btn.primary {
+  background: #2c2d3f;
+  color: #fff;
+}
+.slider .single-slider .btn.primary:before {
+  background: #1a76d1;
+}
+.slider .owl-carousel .owl-nav {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -25px;
+}
+.slider .owl-carousel .owl-nav div {
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  background: #1a76d1;
+  color: #fff;
+  font-size: 26px;
+  position: absolute;
+  margin: 0;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  padding: 0;
+  border-radius: 50%;
+}
+.slider .owl-carousel .owl-nav div:hover {
+  background: #2c2d3f;
+  color: #fff;
+}
+.slider .owl-carousel .owl-controls .owl-nav .owl-prev {
+  left: 20px;
+}
+.slider .owl-carousel .owl-controls .owl-nav .owl-next {
+  right: 20px;
+}
+
+/* Slider Animation */
+.owl-item.active .single-slider h1 {
+  animation: fadeInUp 1s both 0.6s;
+}
+.owl-item.active .single-slider p {
+  animation: fadeInUp 1s both 1s;
+}
+.owl-item.active .single-slider .button {
+  animation: fadeInDown 1s both 1.5s;
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+.btnn {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  display: inline-block;
+  height: 60px;
+  width: 180px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  /* position: relative; */
+  top: -2px;
+  border-radius: 5px;
+  margin-left: 200px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0px 5px 15px rgba(62, 80, 169, 0.75);
+  background-color: #1a76d1;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 60px;
+}
+
+.btnn:before {
+  border-radius: 5px;
+}
+
+.button:hover {
+  box-shadow: none;
+}
+
+.btnnn {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  display: inline-block;
+  height: 60px;
+  width: 180px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  position: relative;
+  top: -2px;
+  border-radius: 5px;
+  margin-left: 200px;
+  font-size: 13px;
+  font-weight: 500;
+  box-shadow: 0px 5px 15px rgba(188, 199, 255, 0.75);
+  background-color: #2c2d3f;
+  color: white;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.btnnn:before {
+  border-radius: 5px;
+}
+.button:hover {
+  box-shadow: none;
+}

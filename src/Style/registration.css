@@ -1,0 +1,84 @@
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+  
+   
+    margin-top: auto;
+    
+    border-radius: 12px; 
+    border:black;
+  }
+  
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+  
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  .reg {
+    padding: 20px 60px;
+    background-color:#1a76d1;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  .reg:hover {
+    background-color: #2c2d3f;
+    
+  }
+
+  .success-message {
+    color: green; /* Set the text color to green */
+    margin-bottom: 10px; /* Add some space at the bottom */
+    /* Add more styles if needed */
+  }
+
+  .error{
+    color:red;
+  }
+
+
+
+  .container {
+    /* Existing styles for the container */
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .input-container label {
+    width: 100px; /* Adjust width as needed */
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+  .input-container input {
+    flex: 1;
+    /* Other input styles */
+  }
+  
+  /* Additional styling for other form elements as needed */
+  
