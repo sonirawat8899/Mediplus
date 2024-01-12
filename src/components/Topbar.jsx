@@ -1,76 +1,59 @@
 import React from "react";
 import "../Style/topbar.css";
-import { Link } from "react-router-dom";
-function Topbar(props) {
-  const { tokenAvailable, setTokenAvailable } = props;
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+function Topbar() {
+  const navigate = useNavigate();
+  const [tokenAvailable, setTokenAvailable] = useState(false);
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
+  const handleTokenStatus = () => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      // Token is available
+      setTokenAvailable(true);
+    } else {
+      // Token is deleted
+      setTokenAvailable(false);
+    }
+  };
 
   const checkTokenAvailability = () => {
-    const token = localStorage.getItem("token");
-    setTokenAvailable(!!token); // Set tokenAvailable to true if token exists
+    handleTokenStatus();
   };
-
 
   const handleDeleteToken = () => {
-    
-    localStorage.removeItem('token');
-    
+    localStorage.removeItem("token");
+    handleTokenStatus();
   };
 
-  
+  const handleDropdownToggle = () => {
+    setDropdownVisible(!dropdownVisible);
+  };
+
+  const closeDropdown = () => {
+    setDropdownVisible(false);
+  };
+
+  useEffect(() => {
+    // Check token status on component mount
+    handleTokenStatus();
+  }, []);
+
+  const navi = () => {
+    navigate("/login");
+  };
+
+
   return (
     <>
       <header className="header">
-        <div className="topbar">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6 col-md-5 col-12">
-                <ul className="top-link">
-                  <li>
-                    <a href="#">About</a>
-                  </li>
-                  <li>
-                    <a href="#">Doctors</a>
-                  </li>
-                  <li>
-                    <a href="#">Contact</a>
-                  </li>
-                  <li>
-                    <a href="#">FAQ</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-6 col-md-7 col-12">
-                <ul className="top-contact">
-                  <li>
-                    <i className="fa fa-phone"></i>+880 1234 56789
-                  </li>
-                  <li>
-                    <i className="fa fa-envelope"></i>
-                    <Link to="mailto:support@yourmail.com">
-                      support@yourmail.com
-                    </Link>
-                  </li>
-                  <div class="dropdown">
-                    <div class="profile-icon">
-                
-             </div>
-                    <div class="dropdown-content">
-                      <Link to = "/profile">Profile</Link>
-                      <Link to = "/login" onClick={handleDeleteToken}>Logout</Link>
-                    </div>
-                  </div>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="header-inner">
           <div className="container">
             <div className="inner">
               <div className="row">
-                <div className="col-lg-3 col-md-3 col-12">
+                <div className="col-lg-2 col-md-3 col-12">
                   <div className="logo">
                     <Link to="">
                       <img src="/assets/img/logo.png" />
@@ -78,7 +61,7 @@ function Topbar(props) {
                   </div>
                   <div className="mobile-nav"></div>
                 </div>
-                <div className="col-lg-7 col-md-9 col-12">
+                <div className="col-lg-6 col-md-9 col-12">
                   <div className="main-menu">
                     <nav className="navigation">
                       <ul className="nav menu">
@@ -132,11 +115,31 @@ function Topbar(props) {
                   <Link to="/registration">
                     <button className="btn">Book Appointment </button>
                   </Link>
-                  <Link to="/login">
-                    <button className="log" onClick={checkTokenAvailability}>
-                      Login
-                    </button>
-                  </Link>
+                </div>
+                
+                <div className="col-lg-2 col-12">
+                  <div className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={closeDropdown}>
+                    <div className="profile-icon">
+                      <span>&#9660;</span>
+                    </div>
+
+                    {dropdownVisible && (
+                      <div className="dropdown-content">
+                        <Link to="/login">
+                          {tokenAvailable ? (
+                            <button className="log" onClick={handleDeleteToken}>
+                              Logout
+                            </button>
+                          ) : (
+                            <button className="log" onClick={navi}>
+                              Login
+                            </button>
+                          )}
+                        </Link>
+                        <Link to="/profile">Profile</Link>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>

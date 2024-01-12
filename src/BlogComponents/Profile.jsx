@@ -1,12 +1,10 @@
-
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Profile = () => {
   const [userData, setUserData] = useState(null);
   const imageUrl = "https://3c62-115-242-209-74.ngrok-free.app";
-  const defaultImageUrl = "/path/to/default/image"; 
+   
   useEffect(() => {
     // Get the token from local storage
     const token = localStorage.getItem('token');

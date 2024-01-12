@@ -63,7 +63,7 @@ const Users = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://3c62-115-242-209-74.ngrok-free.app/users",
+          "https://2eaf-115-242-209-74.ngrok-free.app/users",
           {
             headers: {
               "ngrok-skip-browser-warning": "true",
