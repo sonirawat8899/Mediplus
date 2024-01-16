@@ -4,6 +4,19 @@ import Select from "react-select";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 function AppoinmentOne() {
+  const [validationError, setValidationError] = React.useState(null);
+  const validateForm = () => {
+    // Basic validation for required fields
+    if (!selectedDepartment || !selectedDoctor || !selectedDate) {
+      setValidationError("Please fill out all required fields.");
+      setTimeout(() => {
+        setValidationError(null); // Clear validation error after 3 seconds
+      }, 3000);
+      return false;
+    }
+    return true;
+  };
+
   const departmentOptions = [
     { value: "1", label: "Department" },
     { value: "2", label: "Cardiac Clinic" },
@@ -12,18 +25,6 @@ function AppoinmentOne() {
     { value: "5", label: "Gastroenterology" },
   ];
 
-  const [selectedDepartment, setSelectedDepartment] = React.useState(null);
-
-  const handleDepartmentChange = (selectedOption) => {
-    setSelectedDepartment(selectedOption);
-  };
-
-  const [selectedDate, setSelectedDate] = React.useState(null);
-
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
-
   const doctorOptions = [
     { value: "1", label: "Doctor" },
     { value: "2", label: "Dr. Akther Hossain" },
@@ -31,11 +32,76 @@ function AppoinmentOne() {
     { value: "4", label: "Dr. Jovis Karon" },
   ];
 
+  const [selectedDepartment, setSelectedDepartment] = React.useState(null);
   const [selectedDoctor, setSelectedDoctor] = React.useState(null);
+  const [selectedDate, setSelectedDate] = React.useState(null);
+
+  const handleDepartmentChange = (selectedOption) => {
+    setSelectedDepartment(selectedOption);
+  };
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
 
   const handleDoctorChange = (selectedOption) => {
     setSelectedDoctor(selectedOption);
   };
+
+  const [showSuccessMessage, setShowSuccessMessage] = React.useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: e.target.name.value,
+      email: e.target.email.value,
+      phone: e.target.phone.value,
+      department: selectedDepartment?.label,
+      doctor: selectedDoctor?.label,
+      date: selectedDate,
+      message: e.target.message.value,
+    };
+
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      // Make the API request
+      const response = await fetch(
+        "https://4c51-115-242-209-74.ngrok-free.app/appointments",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      if (response.ok) {
+        // Reset form fields
+        e.target.reset();
+        setSelectedDepartment(null);
+        setSelectedDoctor(null);
+        setSelectedDate(null);
+
+        // Display success message
+        setShowSuccessMessage(true);
+
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000);
+      } else {
+        console.error("Failed to book appointment. Please try again later.");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
+  };
+
   return (
     <>
       <section className="appointment">
@@ -54,7 +120,19 @@ function AppoinmentOne() {
           </div>
           <div className="row">
             <div className="col-lg-6 col-md-12 col-12">
-              <form className="form" action="#">
+              {validationError && (
+                <div className="alert alert-danger" role="alert">
+                  {validationError}
+                </div>
+              )}
+
+              {showSuccessMessage && (
+                <div className="alert alert-success" role="alert">
+                  Appointment booked successfully!
+                </div>
+              )}
+
+              <form className="form" onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="form-group">
@@ -71,33 +149,31 @@ function AppoinmentOne() {
                       <input name="phone" type="text" placeholder="Phone" />
                     </div>
                   </div>
-                  <div className="col-lg-6 col-md-6 col-12" > 
-                    <div className="form-group" >
-                      <Select 
+                  <div className="col-lg-6 col-md-6 col-12">
+                    <div className="form-group">
+                      <Select
                         //  style={{ marginLeft: '-135px' }}
                         placeholder="Department"
                         value={selectedDepartment}
                         onChange={handleDepartmentChange}
                         options={departmentOptions}
                       />
-                    </div>  
+                    </div>
                   </div>
                   <div className="col-lg-6 col-md-6 col-12">
-                    <div className="form-group" >
-                      <Select 
-                    
+                    <div className="form-group">
+                      <Select
                         placeholder="Doctor"
                         value={selectedDoctor}
                         onChange={handleDoctorChange}
                         options={doctorOptions}
-                 
                       />
                     </div>
                   </div>
 
                   <div className="col-lg-6 col-md-6 col-12">
                     <div className="form-group">
-                    <div className="react-datepicker-wrapper">
+                      <div className="react-datepicker-wrapper">
                         <DatePicker
                           placeholderText="Date"
                           selected={selectedDate}
@@ -106,10 +182,9 @@ function AppoinmentOne() {
                           id="datepicker"
                         />
                       </div>
-                      
                     </div>
                   </div>
-                  
+
                   <div className="col-lg-12 col-md-12 col-12">
                     <div className="form-group">
                       <textarea
@@ -128,7 +203,7 @@ function AppoinmentOne() {
                         </button>
                       </div>
                     </div>
-                </div>
+                  </div>
                 </div>
               </form>
             </div>

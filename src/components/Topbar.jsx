@@ -45,7 +45,6 @@ function Topbar() {
     navigate("/login");
   };
 
-
   return (
     <>
       <header className="header">
@@ -111,14 +110,17 @@ function Topbar() {
                   </div>
                 </div>
 
-                <div className="col-lg-2 col-12">
+                <div className="col-lg-2 col-6">
                   <Link to="/registration">
                     <button className="btn">Book Appointment </button>
                   </Link>
                 </div>
-                
-                <div className="col-lg-2 col-12">
-                  <div className="dropdown" onMouseEnter={handleDropdownToggle} onMouseLeave={closeDropdown}>
+                <div className="col-lg-2 col-6">
+                  <div
+                    className="dropdown"
+                    onMouseEnter={handleDropdownToggle}
+                    onMouseLeave={closeDropdown}
+                  >
                     <div className="profile-icon">
                       <span>&#9660;</span>
                     </div>

@@ -1,5 +1,35 @@
 
 
+/* Add these styles for the alert-success class */
+.alert.alert-success {
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	color: #3c763d;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+  }
+  
+  /* Additional styling for the close button */
+  .alert.alert-success .close {
+	color: #31708f;
+	opacity: 0.7;
+	font-size: 18px;
+  }
+  
+  /* Hover effect for the close button */
+  .alert.alert-success .close:hover {
+	color: #245269;
+	opacity: 1;
+  }
+  
+
+
+
+
+
+
 /* Styling for Date input field */
 .appointment .form #datepicker {
     width: 150%;
